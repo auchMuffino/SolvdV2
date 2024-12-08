@@ -1,8 +1,8 @@
-package Vehicles.Cars;
+package vehicles.Cars;
 
-import Components.*;
-import Vehicles.Interfaces.IMove;
-import Vehicles.Vehicle;
+import components.*;
+import vehicles.Interfaces.IMove;
+import vehicles.Vehicle;
 
 import java.util.Arrays;
 
@@ -26,6 +26,15 @@ public abstract class Car extends Vehicle implements IMove {
 
     public Car(){
         numberOfCars++;
+    }
+
+    @Override
+    public int hashCode() {
+        return topSpeed.hashCode();
+    }
+
+    public boolean equals(Car obj) {
+        return this.topSpeed == obj.topSpeed ? true : false;
     }
 
     public Car(Integer topSpeed, Double weight, String title, Engine engine,

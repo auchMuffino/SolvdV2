@@ -1,6 +1,6 @@
-package Buildings;
+package buildings;
 
-import Vehicles.Cars.*;
+import vehicles.Cars.*;
 
 public class CarWash {
     public static void cleanCar(Car car) throws InterruptedException {

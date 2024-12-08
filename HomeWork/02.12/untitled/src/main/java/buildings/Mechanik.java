@@ -1,8 +1,8 @@
-package Buildings;
+package buildings;
 
-import Vehicles.Interfaces.Breakable;
-import Vehicles.Interfaces.IInspect;
-import Vehicles.Interfaces.IRepair;
+import vehicles.Interfaces.Breakable;
+import vehicles.Interfaces.IInspect;
+import vehicles.Interfaces.IRepair;
 
 public final class Mechanik implements IRepair, IInspect {
     @Override

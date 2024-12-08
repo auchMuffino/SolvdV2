@@ -1,6 +1,6 @@
-package Vehicles.Cars;
+package vehicles.Cars;
 
-import Components.*;
+import components.*;
 
 public class CasualCar extends Car {
 

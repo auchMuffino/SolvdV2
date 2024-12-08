@@ -1,4 +1,4 @@
-package Components;
+package components;
 
 public enum CarBody {
     SUV,

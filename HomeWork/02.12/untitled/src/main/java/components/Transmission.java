@@ -1,6 +1,6 @@
-package Components;
+package components;
 
-import Vehicles.Interfaces.Breakable;
+import vehicles.Interfaces.Breakable;
 
 public class Transmission implements Breakable {
     private Transmissions transmissionType = Transmissions.CASUAL;

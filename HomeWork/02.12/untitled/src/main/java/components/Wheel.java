@@ -1,4 +1,4 @@
-package Components;
+package components;
 
 public class Wheel {
     private WheelTypes type;

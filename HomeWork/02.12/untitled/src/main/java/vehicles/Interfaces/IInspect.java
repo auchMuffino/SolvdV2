@@ -1,4 +1,4 @@
-package Vehicles.Interfaces;
+package vehicles.Interfaces;
 
 public interface IInspect {
     default boolean isBroken(Breakable brokenPart){

@@ -1,6 +1,6 @@
-package Buildings;
+package buildings;
 
-import Vehicles.Cars.Car;
+import vehicles.Cars.Car;
 
 public final class GasStation {
     public static void refilling(Car car, double value) throws InterruptedException {

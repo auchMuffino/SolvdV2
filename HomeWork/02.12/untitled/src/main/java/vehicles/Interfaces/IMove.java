@@ -1,4 +1,4 @@
-package Vehicles.Interfaces;
+package vehicles.Interfaces;
 
 public interface IMove {
     void go(int kms);

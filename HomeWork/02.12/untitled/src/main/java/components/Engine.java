@@ -1,6 +1,6 @@
-package Components;
+package components;
 
-import Vehicles.Interfaces.Breakable;
+import vehicles.Interfaces.Breakable;
 
 import java.util.Objects;
 

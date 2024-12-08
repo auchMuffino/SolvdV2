@@ -1,6 +1,4 @@
-package Components;
-
-import java.util.Objects;
+package components;
 
 public class Motor {
     private String motorTitle = "";

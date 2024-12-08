@@ -1,4 +1,4 @@
-package Vehicles.Interfaces;
+package vehicles.Interfaces;
 
 public interface Breakable {
     void breakQ();
