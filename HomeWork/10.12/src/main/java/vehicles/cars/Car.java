@@ -3,6 +3,7 @@ package vehicles.cars;
 import components.*;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.example.Main;
 import vehicles.interfaces.IMove;
 import vehicles.Vehicle;
@@ -56,6 +57,8 @@ public abstract class Car extends Vehicle implements IMove {
         setFuelLevel(fuelLevel);
         setWheels(wheels);
         numberOfCars++;
+
+        PropertyConfigurator.configure("log4j.properties");
     }
 
     @Override
@@ -151,7 +154,7 @@ public abstract class Car extends Vehicle implements IMove {
     public void go(int kms) {
         if(this.engine.getBroken() || this.transmission.getBroken()){
             System.out.println("You cant go because some parts of your car are broken");
-            LOGGER.error("Car is broken Car->go()");
+            LOGGER.info("Car is broken Car->go()");
         } else {
             if ((fuelLevel - (kms * 0.01) * this.fuelConsumption) < 0) {
                 System.out.println("Not enough fuel, you should go to gestation first for this trip");

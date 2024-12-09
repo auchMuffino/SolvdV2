@@ -9,7 +9,7 @@ public final class GasStation {
     private static final Logger LOGGER = LogManager.getLogger(GasStation.class.getName());
     public static void refilling(Car car, double value) throws InterruptedException {
         if((car.getFuelLevel() + value) > car.getTankCapacity()){
-            LOGGER.error("Not enough capacity in car tank");
+            LOGGER.info("Not enough capacity in car tank");
             System.out.println("GasStation: Your tank will be overloaded with " + ((car.getFuelLevel() + value) - car.getTankCapacity()) + "L of fuel");
         } else{
             System.out.println("Perform filling ------------->");
