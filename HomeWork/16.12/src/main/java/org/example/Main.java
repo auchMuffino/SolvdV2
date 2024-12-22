@@ -2,6 +2,9 @@ package org.example;
 
 import buildings.*;
 import components.*;
+import org.databases.DBCPDataSource;
+import org.threads.MyThread;
+import org.threads.MyThread2;
 import org.w3c.dom.ls.LSOutput;
 import vehicles.cars.*;
 import vehicles.interfaces.ILambda;
@@ -11,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.*;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -22,7 +27,7 @@ import java.util.stream.Stream;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException, SQLException {
             Car BMW = new CasualCar(5,280,2300d,"BMW X5", new Engine("Cool", 240, 4.4d, FuelTypes.DIESEL),
                     new Wheel[]{new Wheel(28, Seasons.MID_SEASON1, WheelTypes.UNIVERSAL),
                             new Wheel(28, Seasons.MID_SEASON2, WheelTypes.UNIVERSAL),
@@ -65,10 +70,6 @@ public class Main {
         for(Car car: carParking){
             GasStation.refilling(car,100);
         }
-
-        /*TODO Add 7 collection streaming in the hierarchy with terminal and non-terminal operations.
-            Use forEach(Consumer), map(Function), filter(Predicate)
-         */
 
         List<Integer> numbers = Arrays.asList(3, 2, 3, 4, 6, 8, 2, 4, 62, 432);
 
@@ -155,35 +156,20 @@ public class Main {
         Car refCar = (CasualCar) carConstructors[0].newInstance();
 
         refCar.setCarBody(CarBody.SEDAN);
+    // TODO
+//        Read the following articles:
+//        Threads, Connection Pool
+//        Future, CompletionStage and CompletableFuture java docs
+//        Create 2 Threads using Runnable and Thread.
+//                Questions for the exam that must be covered in this lecture.
 
-        /* previous HomeWork does not required for hierarchy
-          List<String> dataArr = new ArrayList<String>();
+//!        Connection con = DBCPDataSource.getConnection();
+//!        con.beginRequest();
 
-        try {
-            File myObj = new File("src/main/resources/1.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                dataArr.addAll(List.of(myReader.nextLine().toLowerCase().split("\\W")));
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+        MyThread thr1 = new MyThread();
+        MyThread2 thr2 = new MyThread2();
 
-        Map<String, Integer> wordsAndCounts = new HashMap<>();
-
-        for(String word: dataArr){
-            if(word.equals("")){
-                continue;
-            }
-            wordsAndCounts.put(word, wordsAndCounts.get(word) != null ?  wordsAndCounts.get(word) + 1: 1);
-        }
-        System.out.println(wordsAndCounts.size());
-
-
-        UniqueWords w = new UniqueWords("src/main/resources/1.txt");
-        System.out.println(w.countOfWords());
-        */
+        thr1.start();
+        thr2.run();
     }
 }
