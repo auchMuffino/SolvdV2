@@ -1,6 +1,7 @@
 package vehicles.cars;
 
 import components.*;
+import jakarta.xml.bind.annotation.*;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -9,20 +10,28 @@ import vehicles.Vehicle;
 
 import java.util.Arrays;
 
+@XmlRootElement(name = "car")
+//@XmlType(propOrder = { "title", "top_speed", "weight", "tank_capacity", "fuel_consumption", "fuel_level", "engine" })
+@XmlAccessorType(XmlAccessType.FIELD)
 public abstract class Car extends Vehicle implements IMove {
     private static final Logger LOGGER = LogManager.getLogger(Car.class.getName());
+    @XmlElement(name = "top_speed")
     protected Integer topSpeed;
+    @XmlElement(name = "weight")
     protected Double weight;
+    @XmlElement(name = "title")
     protected String title;
+    @XmlElement(name = "engine")
     protected Engine engine;
     protected Wheel[] wheels;
     protected Transmission transmission;
     protected CarBody carBody;
+    @XmlElement(name = "tank_capacity")
     protected Double tankCapacity;
+    @XmlElement(name = "fuel_consumption")
     protected Double fuelConsumption;
+    @XmlElement(name = "fuel_level")
     protected Double fuelLevel;
-
-    public Integer car;
 
     protected static int numberOfCars=0;
 
@@ -79,7 +88,6 @@ public abstract class Car extends Vehicle implements IMove {
         if(weight > 0.d)
             this.weight = weight;
     }
-
     public final void setEngine(Engine engine){
         this.engine = engine;
     }
@@ -169,17 +177,17 @@ public abstract class Car extends Vehicle implements IMove {
     @Override
     public String toString(){
         return "Car{\n" +
-                "\tTitle: " + this.title + ",\n" +
-                "\tTop Speed: " + this.topSpeed + ",\n" +
-                "\tWeight: " + this.weight + ",\n" +
-                "\tBody: " + this.carBody.name() + ",\n" +
-                "\tTank Capacity: " + this.tankCapacity + ",\n" +
-                "\tFuel Consumption" + this.fuelConsumption + ",\n" +
-                "\tEngine: " + this.engine + ",\n" +
-                "\tWheels{\n" + "\t" + Arrays.toString(this.wheels) + "\n}\n" +
-                "\tTransmission: " +this.transmission+",\n" +
-                "\tCurrent Fuel Level: "+ this.fuelLevel + "\n" +
-                "}";
+                "\tTitle: " + this.title + ",\n";
+//                "\tTop Speed: " + this.topSpeed + ",\n" +
+//                "\tWeight: " + this.weight + ",\n"+
+//                "\tBody: " + this.carBody.name() + ",\n" +
+//                "\tTank Capacity: " + this.tankCapacity + ",\n" +
+//                "\tFuel Consumption" + this.fuelConsumption + ",\n" +
+//                "\tEngine: " + this.engine + ",\n" +
+//                "\tWheels{\n" + "\t" + Arrays.toString(this.wheels) + "\n}\n" +
+//                "\tTransmission: " +this.transmission+",\n" +
+//                "\tCurrent Fuel Level: "+ this.fuelLevel + "\n" +
+//                "}";
     }
 
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="cars">
+    <xs:complexType>
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="car">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="title" type="xs:string"/>
+                        <xs:element name="top_speed" type="xs:integer"/>
+                        <xs:element name="weight" type="xs:double"/>
+                        <xs:element name="tank_capacity" type="xs:double"/>
+                        <xs:element name="fuel_consumption" type="xs:double"/>
+                        <xs:element name="fuel_level" type="xs:double"/>
+                        <xs:element name="engine">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="engine_title" type="xs:string"/>
+                                    <xs:element name="horse_powers" type="xs:integer"/>
+                                    <xs:element name="capacity" type="xs:double"/>
+                                    <xs:element name="is_broken" type="xs:boolean"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<car>
+    <title>Book1</title>
+    <weight>200.0</weight>
+    <weight>200.0</weight>
+    <title>Book1</title>
+    <engine>
+        <engine_title>Cool</engine_title>
+        <horse_powers>730</horse_powers>
+        <capacity>8.651115617539029</capacity>
+        <fuelType>DIESEL</fuelType>
+        <is_broken>false</is_broken>
+    </engine>
+    <tank_capacity>20.0</tank_capacity>
+    <fuel_consumption>2.0</fuel_consumption>
+    <fuel_level>2.0</fuel_level>
+</car>

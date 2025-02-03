@@ -18,6 +18,13 @@ public class CasualCar extends Car {
         this.numberOfSeats = numberOfSeats;
     }
 
+    public void setNumberOfSeats(int numberOfSeats){
+        this.numberOfSeats = numberOfSeats;
+    }
+    public int getNumberOfSeats(){
+        return this.numberOfSeats;
+    }
+
     @Override
     public String toString() {
         return "CasualCar{\n"+"\tNumber of seats:"+ this.numberOfSeats + "\n" + super.toString() + "\n}";

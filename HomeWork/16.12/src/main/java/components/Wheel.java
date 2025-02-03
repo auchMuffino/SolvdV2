@@ -10,6 +10,8 @@ public class Wheel {
         this.season = season;
         this.type = type;
     }
+    public Wheel() {
+    }
 
 
     public Seasons getSeason() {

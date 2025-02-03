@@ -1,14 +1,22 @@
 package components;
 
+import jakarta.xml.bind.annotation.*;
 import vehicles.interfaces.Breakable;
 
 import java.util.Objects;
 
+@XmlRootElement(name = "engine")
+//@XmlType(propOrder = { "engine_title", "horse_powers", "capacity", "is_broken"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Engine implements Breakable {
+    @XmlElement(name = "engine_title")
     private String engineTitle = "";
+    @XmlElement(name = "horse_powers")
     private int horsePowers = 0;
+    @XmlElement(name = "capacity")
     private double capacity = 0.0d;
     private FuelTypes fuelType = FuelTypes.DIESEL;
+    @XmlElement(name = "is_broken")
     private boolean broken = false;
 
 
@@ -17,6 +25,8 @@ public class Engine implements Breakable {
         this.horsePowers = horsePowers;
         this.capacity = capacity;
         this.fuelType = fuelType;
+    }
+    public Engine() {
     }
 
 
@@ -35,7 +45,7 @@ public class Engine implements Breakable {
     public void setHorsePowers(int horsePowers) {
         this.horsePowers = horsePowers;
     }
-    public void setHorsePowers(double horsePowers){}
+    //public void setHorsePowers(double horsePowers){}
 
 
     public String getEngineTitle() {

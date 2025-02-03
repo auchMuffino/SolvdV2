@@ -9,6 +9,8 @@ public class Transmission implements Breakable {
     public Transmission(Transmissions transmissionType){
         this.transmissionType = transmissionType;
     }
+    public Transmission(){
+    }
 
     public void setTransmission(Transmissions transmissionType){
         this.transmissionType = transmissionType;

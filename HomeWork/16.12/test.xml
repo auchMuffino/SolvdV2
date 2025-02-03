@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<cars
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="schema.xsd">
+    <car>
+        <title>BMW</title>
+        <top_speed>250</top_speed>
+        <weight>2000</weight>
+        <tank_capacity>20</tank_capacity>
+        <fuel_consumption>4.0</fuel_consumption>
+        <fuel_level>2.4</fuel_level>
+        <engine>
+            <engine_title>BMWW12</engine_title>
+            <horse_powers>400</horse_powers>
+            <capacity>0.6</capacity>
+            <is_broken>false</is_broken>
+        </engine>
+    </car>
+    <car>
+        <title>BMW23</title>
+        <top_speed>250</top_speed>
+        <weight>2000</weight>
+        <tank_capacity>20</tank_capacity>
+        <fuel_consumption>4.0</fuel_consumption>
+        <fuel_level>2.4</fuel_level>
+        <engine>
+            <engine_title>BMWW122</engine_title>
+            <horse_powers>400</horse_powers>
+            <capacity>0.6</capacity>
+            <is_broken>false</is_broken>
+        </engine>
+    </car>
+</cars>
